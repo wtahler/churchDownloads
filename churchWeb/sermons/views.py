@@ -76,11 +76,14 @@ def editFolder(request,id=False):
             folderForm = folderForm.save(commit=False)
             if id:
                 folderForm.pk = id
+            folderForm.save_m2m()
             folderForm.save()   
             id = folderForm.pk             
             return HttpResponseRedirect(reverse(viewFolder,args=[id]))
         elif id:
-            folder = FolderForm(request.POST,instance=Folder.objects.get(pk=id)).save()
+            folder = FolderForm(request.POST,instance=Folder.objects.get(pk=id)).save(commit=False)
+            folder.save_m2m()
+            folder.save()
             return HttpResponseRedirect(reverse(viewFolder,args=[id]))
         else:
             context['folderForm'] = folderForm
