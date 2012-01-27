@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}<title>Upload Sermons</title>{% endblock title %}
+{% block scripts %}
+{{ block.super }}
+	<script type="application/javascript" src="{{STATIC_URL}}js/sermons/upload.js"></script>
+{% endblock scripts %}
+{% block content %}
+	<a href="{% url sermons.views.editSermon %}" class="button">Upload Audio File</a>
+	<a href="{% url sermons.views.editFolder %}" class="button">Create Folder</a>
+	{% if id == 0 %}
+	<a href="{% url sermons.views.viewFolder id=False %}" class="button">Up Directory</a>
+	{% else %}{% if id %}
+	<a href="{% url sermons.views.viewFolder id=id %}" class="button">Up Directory</a>
+	{% endif %}
+	{% endif %}
+	<table>
+		<tr><th>Filename</th><th>Sermon Date</th><th>Date Uploaded</th><th>Uploaded by</th><th>Delete?</th></tr>
+		{% for file in fileList %}
+		<tr>
+			<td><a class="editSermon" href="{% url sermons.views.editSermon id=file.pk %}">{{ file.name }}</a></td>
+			<td>{{ file.sermonDate|date:"DATE_FORMAT" }}</td>
+			<td>{{ file.dateUploaded|date:"DATE_FORMAT"}}</td>
+			<td>{{ file.owner.username }}</td>
+			<td><a href="{% url sermons.views.deleteSermon id=file.pk %}" class="button">DELETE</a></td>
+		</tr>
+		{% endfor %}
+		{% for folder in folderList %}
+		<tr>
+			<td><a class="editFolder" href="{% url sermons.views.editFolder id=folder.pk %}">{{ folder.name }}</a></td>
+			<td><a href="{% url sermons.views.viewFolder id=folder.pk %}" class="button">Open Folder</a></td>
+			<td></td>
+			<td></td>
+			<td><a href="{% url sermons.views.deleteFolder id=folder.pk %}" class="button">DELETE</a></td>
+		</tr>
+		{% endfor %}
+	</table>
+{% endblock content %}

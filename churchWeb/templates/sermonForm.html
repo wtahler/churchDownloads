@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}<title>Upload Sermons</title>{% endblock title %}
+{% block scripts %}
+{{ block.super }}
+<script type="application/javascript" src="{{STATIC_URL}}js/sermons/upload.js"></script>
+{% endblock scripts %}
+{% block content %}
+<form id="sermonForm" enctype="multipart/form-data" method="post" {% if currID %}action="{% url sermons.views.editSermon id=currID %}"{% else %}action="{% url sermons.views.editSermon %}" {% endif %}>
+		{% csrf_token %}
+		{{ sermonFileForm.as_p }}
+		<button type='submit' class='button'>Submit</button>
+</form>
+{% endblock content %}

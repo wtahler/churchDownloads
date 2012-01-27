@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %}<title>Upload Sermons</title>{% endblock title %}
+{% block scripts %}
+{{ block.super }}
+<script type="application/javascript" src="{{STATIC_URL}}js/sermons/upload.js"></script>
+<script src="{{STATIC_URL}}js/jquery-multi-file/jquery.MultiFile.js" type="text/javascript" language="javascript"></script>
+{% endblock scripts %}
+{% block content %}
+<div id="tabs">
+	<ul>
+		<li><a href="#tabs-1">Upload Files</a></li>
+		<li><a href="#tabs-2">Manage Files</a></li>
+		<li><a href="#tabs-3">View Statistics</a></li>
+	</ul>
+	<div id="tabs-1">
+	<div id="tabs-1-content">
+	{% if error %}<div style="display:none" id="error"><p>{{ error }}</p></div>{% endif %}
+		<div id="uploadFormWrapper">
+		<form enctype="multipart/form-data" id="uploadFormHTML" method="post" action="{% url sermons.views.uploadSermon %}">
+		{% csrf_token %}
+		{{ sermonFileForm.as_p }}
+		<button type="submit" class="button">Upload</button>
+		</form>
+		</div>
+	</div>
+	</div>
+	<div id="tabs-2">
+	<div id="tabs-2-content">
+		<div id="accordion">
+			<h3><a href="#">Files</a></h3>
+			<div>
+				<table>
+				<tr><th>Filename</th><th>Sermon Date</th><th>Date Uploaded</th><th>Uploaded by</th></tr>
+				{% for file in currentFiles %}
+				<tr>
+					<td><a class="editSermon" href="#" pk="{{ file.id }}">{{ file.name }}</a></td>
+					<td>{{ file.sermonDate|date:"DATE_FORMAT" }}</td>
+					<td>{{ file.dateUploaded|date:"DATE_FORMAT"}}</td>
+					<td>{{ file.owner.username }}</td>
+				</tr>
+				{% endfor %}
+				</table>
+			</div>
+			<h3><a href="#">Folders</a></h3>
+			<div>
+				<button class="button">Add Folder</button>
+			</div>
+		</div>
+	</div>
+	</div>
+	<div id="tabs-3">
+	<div id="tabs-3-content">
+		{% for folder in folders %}{{ folder.name }}{% endfor %}
+	</div>
+	</div>
+</div>
+<div id="dialog-uploadForm"></div>
+<div id="dialog-folderForm"></div>
+<div style="display:none" id="blankFormWrapper"><form id="blankForm" enctype="multipart/form-data" method="post" action="#" url="{% url sermons.views.uploadSermon %}">
+		{% csrf_token %}
+		{{ blankSermonFileForm.as_p }}
+		</form></div>
+<div style="display:none" id="blankFolderWrapper"><form id="blankFolderForm" enctype="multipart/form-data" method="post" action="#" url="{% url sermons.views.uploadSermon %}">
+		{% csrf_token %}
+		{{ blankFolderForm.as_p }}
+		</form></div>
+{% endblock content %}

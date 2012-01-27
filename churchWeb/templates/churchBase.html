@@ -1,0 +1,89 @@
+{% block head %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+{% block title %}
+{% endblock title %}
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}js/jquery-ui/css/redmond/jquery-ui-1.8.16.custom.css"/>
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}notifyBar/css/jquery.notifyBar.css"/>
+<link rel="shortcut icon" href="http://www.elizabethleeumc.org/clientimages/33030/favicon.ico" type="image/x-icon" />
+<style type="text/css" media="screen">
+#albumPhoto{margin:1px;display:block;clear:both;}#albumThumbnails img{float:left;width:120px;height:80px;border:0px;padding:1px;}#BtnECard{background-image:url(http://www.elizabethleeumc.org/common/images/send_button.gif);height:22px;display:block;background-repeat:no-repeat;background-position:top center;}#copyright{text-align:center;font-size:8pt;}.answers{width:100%;border-top:1px solid #000;margin-top:5px;}.answers TD{font-size:.85em;}.bgDark{background-color:#666;}.bgMedium{background-color:#ccc;}.bgLight, tr.even{background-color:#eee;}.button{color:black;border:1px solid #000;background:#ccc;padding:1px 7px;}a.button{text-decoration:none;color:#000;}.calendar h3{margin-top:0px;margin-left:5px;}.calendar p{font-size:9pt;margin-left:5px;margin-right:2px;}.calendarLabel{text-align:center;font-weight:bold;}.center{text-align:center;}.clickable{cursor:pointer;}.childThread{margin-left:15px;}.childPost{border-left:1px solid gray;margin-left:10px;padding-left:10px;}.dataGrid,.cartGrid{width:100%;}.dataGrid,.optionGrid,.infoGrid{margin-top:10px;margin-bottom:10px;border-collapse:collapse;}.dataGrid td,.optionGrid td{padding-right:10px;}.hidden{display:none;}.inset{padding:10px;}.label{text-align:right;font-weight:bold;}.leftArrow{float:left;}.noMargin{margin:0px;}.menu,.submenu,.submenu2,.submenu3,.submenu4,.siteIndex{display:block;}.inline{display:inline;}.menuContainer{position:absolute;visibility:hidden;background-color:#fff;}.parentThread{font-weight:bold;}.poll{width:95%;color:#000;background-color:#fff;border:1px solid #000;}.poll h6{width:100%;margin-top:0em;text-align:center;}.pollTotal{border-top:1px solid #000;text-align:center;}.required{color:#900;}.rightArrow{float:right;text-align:right;}.rule{border-top:1px solid #999;}.slide{float:left;border:0px;}.textBox,.selectBox,.textarea{width:100%;}.thumbnail{width:102px;height:102px;margin-top:10px;margin-bottom:5px;margin-right:5px;overflow:hidden;border:0px;}.tools{font-size:7pt;}tr.calendarLabel td,tr.calendarLabel th{width:14%;}table.calendar{border-left:1px solid #666;border-top:1px solid #666;}.calendar td,.calendar th{border-bottom:1px solid #666;border-right:1px solid #666;}body{font-size:.8em;text-align:center;margin:0px;}h1,h2{margin-top:.5em;margin-bottom:.125em;}h3,h4,h5,h6{margin-top:1em;margin-bottom:.125em;}p{margin-top:0px;}#columns{clear:both;}#content{min-width:775px;margin:0 auto;height:auto;text-align:left;}#emailThisPage,#emailThisPage div{display:inline;}#skip-navigation{display:none;}#menu ul,#submenu ul{display:block;padding:0px;margin:0px;width:100%;}#menu ul li,#submenu ul li{list-style-type:none;margin:0px;padding:0px;}#menu ul ul{font-size:.9em;}#menu a,#submenu a{display:block;padding-left:1em;padding-right:1em;}#masthead{position:relative;overflow:hidden;clear:both;}#site-name{position:absolute;margin-top:0px;top:0px;left:0px;width:100%;z-index:50;}#left-column,#right-column{width:160px;}#footer{text-align:center;}#date-time{position:absolute;top:0px;left:0px;display:none;z-index:75;}#left-column-content,#center-column-content,#right-column-content{margin:1em;}#slogan{position:absolute;}#tools{padding-left:1em;}#tools a{border:0px;}#tools img,#tools-calendar, #tools form input{width:24px;height:24px;border:0px;margin-right:2px;}.clear{clear:both;}.columns{width:100%;}#tools-search-image,#tools-sitemap-image,#tools-email-image,#tools-facebook-image,#tools-twitter-image{background-image:url(http://www.elizabethleeumc.org/common/images/tools.png);background-repeat:no-repeat;}#tools-search-image{background-position:0px 0px;}#tools-sitemap-image{background-position:-24px 0px;}#tools-email-image{background-position:-48px 0px;}#tools-facebook-image{background-position:-72px 0px;}#tools-twitter-image{background-position:-96px 0px;}#tools-search-image:hover{background-position:0px -24px;}#tools-sitemap-image:hover{background-position:-24px -24px;}#tools-email-image:hover{background-position:-48px -24px;}#tools-facebook-image:hover{background-position:-72px -24px;}#tools-twitter-image:hover{background-position:-96px -24px;}#menu ul ul li{padding-left:10px;}</style>
+<style type="text/css" media="screen">body{background-color:#941408;font-family:Trebuchet MS;}#content{background-color:#ffffff;background-image:url(http://www.elizabethleeumc.org/templates/system/lit/lit02/lit02re/masthead_bg.gif);background-repeat:repeat-x;}#masthead{background-image:url(http://www.elizabethleeumc.org/templates/system/lit/lit02/lit02re/masthead.jpg);background-repeat:no-repeat;height:132px;}#site-name{color:#941408;font-family:Arial;font-size:16px;font-style:italic;font-weight:bold;text-align:right;top:112px;width:775px;}#slogan{color:#fff;font-family:Arial;font-size:12px;font-style:italic;left:10px;top:95px;width:775px;}#columns{background-image:url(http://www.elizabethleeumc.org/templates/system/lit/lit02/lit02re/bottom-triangle.gif);background-position:bottom left;background-repeat:no-repeat;padding-bottom:22px;}#footer{background-color:#941408;}h1{color:#941408;font-family:Arial;font-weight:normal;}h2{color:#4265B5;font-family:Arial;font-weight:normal;}h3{color:#941408;font-family:Arial;}h4{color:#4265B5;font-family:Arial;}h5{color:#941408;font-family:Arial;}h6{color:#4265B5;font-family:Arial;}a{color:#941408;}#menu{background-image:url(http://www.elizabethleeumc.org/templates/system/lit/lit02/lit02re/a-closer-look.gif);background-position:top right;background-repeat:no-repeat;border-right-color:#EFDFDE;border-right-style:solid;border-right-width:2px;padding-top:40px;}#menu a{font-weight:bold;text-decoration:none;}#menu ul ul a{color:#4265B5;}#copyright{padding-bottom:1em;padding-top:1em;}#copyright a{color:#000000;text-decoration:none;}</style>
+<style type="text/css" media="print">@import "http://www.elizabethleeumc.org/templates/system/print.css";</style>
+{% endblock styles %}
+{% block scripts %}
+<script type="application/javascript" src="{{STATIC_URL}}js/notifyBar/jquery.notifyBar.js"></script>
+<script type="application/javascript" src="{{STATIC_URL}}js/base.js"></script>
+<script type="application/javascript" src="{{STATIC_URL}}js/jquery-ui/js/jquery-1.6.2.min.js"></script>
+<script type="application/javascript" src="{{STATIC_URL}}js/jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+<script type="text/javascript">var ancestors = [884849];</script>
+{% endblock scripts %}
+{% block content %}
+</head>
+{% endblock head %}
+{% block content %}
+<body>
+<div id="site-content">
+<div id="content">
+<div id="header">
+
+</div>
+
+<div id="masthead">
+<div id="site-name">Elizabeth Lee United Methodist Church</div>
+<div id="date-time">Tuesday, August 30, 2011</div>
+<div id="slogan"></div>
+<div id="masthead-image"></div>	
+</div>
+
+<div id="columns">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td valign="top" id="left-column">
+<div id="left-column-width">
+<div id="menu"><ul><li id="skip-navigation"><a href="#main-content">Skip Navigation</a></li><li id="menu-link-home"><a href="http://www.elizabethleeumc.org/" class="LHome">Home</a></li><li class="L846287"><a href="http://www.elizabethleeumc.org/EnoughStewardshipCampaign2011" class="L846287">Enough</a></li><li class="L884849 selected"><a href="http://www.elizabethleeumc.org/ListentoSermonsandServices" class="L884849 selected">Listen to Sermons and Services</a></li><li class="L569598"><a href="http://www.elizabethleeumc.org/569598" class="L569598">Ministries</a></li><li class="L334406"><a href="http://www.elizabethleeumc.org/334406" class="L334406">News &amp; Alerts</a></li><li class="L301177"><a href="http://www.elizabethleeumc.org/301177" class="L301177">Prayer Requests</a></li><li class="L348645"><a href="http://www.elizabethleeumc.org/348645" class="L348645">Sports</a></li><li class="L496954"><a href="http://www.elizabethleeumc.org/496954" class="L496954">Sunday School News</a></li><li id="menu-link-events"><a href="http://www.elizabethleeumc.org/templates/default.asp?id=33030&amp;PG=events" class="events">Calendar</a></li><li id="menu-link-contact-us"><a href="http://www.elizabethleeumc.org/templates/default.asp?id=33030&amp;PG=contact" class="LContact">Contact Us</a></li></ul><div id="FFMenuBgFix" class="clear"></div></div>
+
+<div id="tools"><a href="http://www.elizabethleeumc.org/templates/default.asp?id=33030&amp;PG=search" id="tools-search-link" class="TipSearchSite" title="Search this site."><img src="http://www.elizabethleeumc.org/common/images/clear.gif" width="24" height="24" class="TipSearchSite" alt="Search this site." id="tools-search-image"/></a><a href="http://www.elizabethleeumc.org/templates/default.asp?id=33030&amp;PG=siteindex" id="tools-sitemap-link" title="View the site map."><img src="http://www.elizabethleeumc.org/common/images/clear.gif" width="24" height="24" class="LnkSiteMap" alt="View the site map." id="tools-sitemap-image"/></a><form id="emailThisPage" method="post" action="http://www.elizabethleeumc.org/templates/System/details.asp?id=33030&amp;PG=ePage" onsubmit="sendContents();return false;"><div><input type="hidden" name="PageLink" value="http://www.elizabethleeumc.org/templates/default.asp?404;http://www.elizabethleeumc.org:80/ListentoSermonsandServices" /><input type="hidden" name="PageContents" /><input type="image" src="http://www.elizabethleeumc.org/common/images/clear.gif" class="TipEmailPage" alt="Email this page to a friend." title="Email this page to a friend." id="tools-email-image"/></div></form></div>
+<div id="left-column-content">
+
+</div>
+</div>
+</td>
+
+<td valign="top" id="center-column">
+<a name="main-content"></a>
+<div id="center-column-content">
+<div id="bodyCopy"><h1 class="page-title">Listen to Sermons and Services</h1><h3>
+{% endblock content %}
+&nbsp;</h3></div>
+</div>
+</td>
+
+<td valign="top" id="right-column">
+
+<div id="right-column-width">
+
+<div id="right-column-content">
+
+</div>
+</div>
+</td>
+</tr>
+</table>
+<div class="clear"></div>
+</div><!-- END CONTENT -->
+
+<div id="footer">
+<div id="footer-content">
+<div id="copyright"> Powered by <a href="http://e-zekiel.com" onclick="window.open(this.href);return false;">E-zekiel</a></div>
+
+</div>
+</div>
+</div>
+</div><!-- END WRAPPER -->
+
+</body>
+</html>

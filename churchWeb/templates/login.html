@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}<title>Login</title>{% endblock title %}
+{% block scripts %}
+{{ block.super }}
+<script type="application/javascript" src="{{STATIC_URL}}js/sermons/login.js"></script>
+{% endblock scripts %}
+{% block content %}
+{{ block.super }}
+<div id="tabs">
+	<ul>
+		<li><a href="#tabs-1">Login</a></li>
+	</ul>
+	<div id="tabs-1">
+	{% if error %}<div style="display:none" id="error"><p>{{ error }}</p></div>{% endif %}
+		<div id="sermonFormWrapper">
+			<form method="post" action="#" url="{% url sermons.views.login %}" onsubmit="return login();" id="sermonFormHTML">
+			{% csrf_token %}
+			Username:<input type='text' name='username' id='username'></input></br>
+			Password:<input type='password' name='password' id='password'></input></br>
+			<input type="submit" class="button"></input>
+			</form>
+		</div>
+	</div>
+
+</div>
+{% endblock content %}
