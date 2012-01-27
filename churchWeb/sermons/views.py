@@ -141,7 +141,7 @@ def viewFolder(request,id=False):
         thisFolder = Folder.objects.get(pk=id)
         context['fileList'] = SermonFile.objects.filter(fileFolders=thisFolder)
         context['folderList'] = Folder.objects.filter(folder=thisFolder)
-        upFolder = Folder.objects.filter(folder=thisFolder)
+        upFolder = Folder.objects.get(pk=id).folder
         if upFolder:
             context['id'] = upFolder.id
         else:
