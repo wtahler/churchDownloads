@@ -4,7 +4,7 @@ from datetime import datetime
 
 # Create your models here.
 class SermonFile(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100,blank=True)
     dateUploaded = models.DateTimeField(auto_now_add=True)
     sermonDate = models.DateField(default=datetime.now)
     audioFile = models.FileField(upload_to='sermons/')
@@ -12,6 +12,9 @@ class SermonFile(models.Model):
     downloadNumber = models.IntegerField(default=0)
     def __unicode__(self):
         return self.name
+
+    def clean(self):
+        self.name = self.audioFile.name
 
 class Iptracker(models.Model):
     sermonFile = models.ForeignKey(SermonFile)
