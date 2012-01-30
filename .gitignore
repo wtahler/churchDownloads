@@ -2,3 +2,4 @@ venv
 *.pyc
 *.py*
 .project
+churchWeb/database.sqlite
