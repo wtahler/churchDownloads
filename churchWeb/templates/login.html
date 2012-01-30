@@ -13,7 +13,7 @@
 	<div id="tabs-1">
 	{% if error %}<div style="display:none" id="error"><p>{{ error }}</p></div>{% endif %}
 		<div id="sermonFormWrapper">
-			<form method="post" action="#" url="{% url sermons.views.login %}" onsubmit="return login();" id="sermonFormHTML">
+			<form method="post" action="{% url sermons.views.login %}" id="sermonFormHTML">
 			{% csrf_token %}
 			Username:<input type='text' name='username' id='username'></input></br>
 			Password:<input type='password' name='password' id='password'></input></br>

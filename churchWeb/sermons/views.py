@@ -43,7 +43,7 @@ def login(request):
         if user is not None: # if user is logged in, log them in with django's auth system
             djangoLogin(request,user)
             # redirect to whatever url the user was trying to access
-            #return HttpResponseRedirect(request.POST['next'])
+            return HttpResponseRedirect(reverse(viewFolder,args=[False]))
         else:
             context['error'] ='Username or password was incorrect'
         #return HttpResponse(json.dumps(output))
