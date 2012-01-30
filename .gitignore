@@ -3,3 +3,4 @@ venv
 *.py*
 .project
 churchWeb/database.sqlite
+churchWeb/media*
