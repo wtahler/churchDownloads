@@ -168,3 +168,8 @@ LOGGING = {
         },
     }
 }
+
+try:
+    from settingsLocal import *
+except ImportError:
+    print "No settingsLocal.py file, if you don't want the default settings be sure to make one (and probably run syncdb again)"
