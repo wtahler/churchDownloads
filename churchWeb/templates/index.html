@@ -52,7 +52,7 @@ document.open();document.write('<scr'+'ipt type="text/javascript" src="/common/j
 {% else %}{% if currID %}<a href="{% url sermons.views.main id=currID %}">Up Folder</a>{% endif %}
 {% endif %}
 {% for folder in allFolders %}
-<tr><td><a href='{% url sermons.views.main id=folder.pk %}'>{{ folder.name }}</a></td>
+<tr><td><img src="{{STATIC_URL}}images/Folder.png" height="30px" width="30px"></img><a href='{% url sermons.views.main id=folder.pk %}'>{{ folder.name }}</a></td>
 <td></td><td></td></tr>
 {% endfor %}
 {% for file in allFiles %}

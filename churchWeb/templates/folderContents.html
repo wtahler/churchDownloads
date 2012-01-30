@@ -26,7 +26,7 @@
 		{% endfor %}
 		{% for folder in folderList %}
 		<tr>
-			<td><a class="editFolder" href="{% url sermons.views.editFolder id=folder.pk %}">{{ folder.name }}</a></td>
+			<td><img src="{{STATIC_URL}}images/Folder.png" height="30px" width="30px"></img><a class="editFolder" href="{% url sermons.views.editFolder id=folder.pk %}">{{ folder.name }}</a></td>
 			<td><a href="{% url sermons.views.viewFolder id=folder.pk %}" class="button">Open Folder</a></td>
 			<td></td>
 			<td></td>
